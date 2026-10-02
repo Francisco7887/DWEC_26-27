@@ -106,61 +106,71 @@
             </table>
             <h2 class="mt-4">Motores de los navegadores</h2>
 
-            <p>
-              Muchos navegadores utilizan tecnologías de Chromium y comparten el
-              motor de renderizado Blink. Chrome, Edge y Opera utilizan este motor,
-              por lo que pueden tener un comportamiento parecido en muchas páginas.
-              Firefox utiliza Gecko y Safari utiliza WebKit, por lo que existen
-              diferencias entre los motores. Para un desarrollador esto significa
-              que una página no debe probarse solamente en un navegador. Una
-              característica de HTML, CSS o JavaScript puede comportarse de forma
-              diferente dependiendo del navegador y de su versión.
-          </p>
+              <p>
+                Muchos navegadores utilizan tecnologías de Chromium y comparten el
+                motor de renderizado Blink. Chrome, Edge y Opera utilizan este motor,
+                por lo que pueden tener un comportamiento parecido en muchas páginas.
+                Firefox utiliza Gecko y Safari utiliza WebKit, por lo que existen
+                diferencias entre los motores. Para un desarrollador esto significa
+                que una página no debe probarse solamente en un navegador. Una
+                característica de HTML, CSS o JavaScript puede comportarse de forma
+                diferente dependiendo del navegador y de su versión.
+            </p>
           
 
-          <div class="card mt-4">
-            <div class="card-body">
+            <div class="card mt-4">
+              <div class="card-body">
 
-              <h2 class="card-title">
-                Ejemplo de compatibilidad
-              </h2>
+                <h2 class="card-title">
+                  Ejemplo de compatibilidad
+                </h2>
 
-              <h3 class="h5">
-                CSS Subgrid
-              </h3>
+                <h3 class="h5">
+                  CSS Subgrid
+                </h3>
 
-              <p class="card-text">
-                CSS Subgrid permite que una cuadrícula hija utilice las filas
-                o columnas definidas por la cuadrícula de su elemento padre.
-              </p>
+                <p class="card-text">
+                  CSS Subgrid permite que una cuadrícula hija utilice las filas
+                  o columnas definidas por la cuadrícula de su elemento padre.
+                </p>
 
-              <p class="card-text">
-                Esta característica no tuvo el mismo nivel de compatibilidad
-                en todas las versiones de los navegadores. Por ejemplo, las
-                versiones antiguas de Chrome, Edge, Firefox, Safari y Opera
-                no ofrecían el mismo soporte.
-              </p>
+                <p class="card-text">
+                  Esta característica no tuvo el mismo nivel de compatibilidad
+                  en todas las versiones de los navegadores. Por ejemplo, las
+                  versiones antiguas de Chrome, Edge, Firefox, Safari y Opera
+                  no ofrecían el mismo soporte.
+                </p>
 
-              <p class="card-text">
-                Fecha de consulta: 1 de octubre de 2026.
-              </p>
+                <p class="card-text">
+                  Fecha de consulta: 1 de octubre de 2026.
+                </p>
 
-              <a href="https://caniuse.com/css-subgrid"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary">
-                Ver compatibilidad en Can I Use
-              </a>
+                <a href="https://caniuse.com/css-subgrid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary">
+                  Ver compatibilidad en Can I Use
+                </a>
 
+              </div>
             </div>
-          </div>
+
+            <h2 class="mt-4">Reflexión</h2>
+            <p>
+              Si un cliente me encargara una página web, primero la probaría
+              en Chrome y Firefox porque utilizan motores diferentes.
+              También comprobaría la página en un dispositivo móvil para
+              asegurarme de que el diseño se adapta correctamente a pantallas
+              pequeñas. Además, probaría Safari si la web está destinada a
+              usuarios de dispositivos Apple.
+            </p>
+            
           </div>
         </div>
       </div>
     </main>
-    
   </div>
-  
+
   <!-- JS de Bootstrap (navbar que se pliega, modales, dropdowns...). Al final del body -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
