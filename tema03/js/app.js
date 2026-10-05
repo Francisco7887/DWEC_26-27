@@ -1,5 +1,5 @@
 /*
-  Tarea 3 · DWEC · [Tu nombre y apellidos]
+  Tarea 3 · DWEC · Francisco Fernández Ortega
   Variables, tipos y conversiones.
 
   Cómo usar esta plantilla:
@@ -17,8 +17,23 @@ function ejercicio1() {
   console.log("--- Ejercicio 1 · Variables y typeof ---");
 
   // Ejemplo: una variable y su typeof en la consola
-  const edad = 20;   // number
+  const edad = 27;   // number
   console.log("edad =", edad, "→", typeof edad);
+
+  const nombre = "Frank";
+  console.log("nombre =", nombre, "→", typeof nombre);
+
+  const verdadero = true;
+  console.log("boolean =", verdadero, "→", typeof verdadero);
+
+  const esNull = null;
+  console.log("null =", esNull, "→", typeof esNull);
+
+  let undefined;
+  console.log("undefinded =", undefined, "→", typeof undefined);
+
+  const bigNumero = 100000000000000000000000000000000000000000000000000000000;
+  console.log("Bigint =", bigNumero, "→", typeof bigNumero);
 
   // TODO: declara una variable de cada tipo que falta: string, boolean, null, undefined y bigint (como 10n).
   //       const si no va a cambiar; let para al menos una a la que des valor más tarde.
@@ -65,7 +80,7 @@ function ejercicio4() {
   console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
 
   // Tus datos, con const
-  const nombre = "[Tu nombre]";
+  const nombre = "Francisco Fernández Ortega";
   // TODO: ciclo, curso y una afición, también con const.
 
   // Un dato que cambia, con let
