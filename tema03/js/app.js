@@ -32,7 +32,7 @@ function ejercicio1() {
   let undefined;
   console.log("undefinded =", undefined, "→", typeof undefined);
 
-  const bigNumero = 100000000000000000000000000000000000000000000000000000000;
+  const bigNumero = 10n;
   console.log("Bigint =", bigNumero, "→", typeof bigNumero);
 
   // TODO: declara una variable de cada tipo que falta: string, boolean, null, undefined y bigint (como 10n).
