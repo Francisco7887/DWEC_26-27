@@ -99,22 +99,46 @@
             <tbody>
               <tr>
                 <th scope="row">edad</th>
-                <td><code>20</code></td>
+                <td><code>27</code></td>
                 <td><code>number</code></td>
                 <td><code>number</code></td>
               </tr>
               <tr>
-                <th scope="row">[variable]</th>
-                <td><code>[valor]</code></td>
-                <td><code>[lo que esperas]</code></td>
-                <td><code>[lo que sale]</code></td>
+                <th scope="row">nombre</th>
+                <td><code>"Frank"</code></td>
+                <td><code>string</code></td>
+                <td><code>string</code></td>
+              </tr>
+              <tr>
+                <th scope="row">activo</th>
+                <td><code>true</code></td>
+                <td><code>boolean</code></td>
+                <td><code>boolean</code></td>
+              </tr>
+              <tr>
+                <th scope="row">datoNulo</th>
+                <td><code>null</code></td>
+                <td><code>object</code></td>
+                <td><code>object</code></td>
+              </tr>
+              <tr>
+                <th scope="row">datoSinDefinir</th>
+                <td><code>undefined</code></td>
+                <td><code>undefined</code></td>
+                <td><code>undefined</code></td>
+              </tr>
+              <tr>
+                <th scope="row">numeroGrande</th>
+                <td><code>100000000000000000000</code></td>
+                <td><code>bigint</code></td>
+                <td><code>number</code></td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong> [explica en una línea qué pasa con typeof null]</p>
+        <p class="small mb-0"><strong>El caso de null:</strong> aunque representa la ausencia de valor, typeof null devuelve "object" por una particularidad histórica de JavaScript la cual han dejado por vagos.</p>
       </div>
 
       <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
