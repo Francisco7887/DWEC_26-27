@@ -112,15 +112,35 @@ function ejercicio3() {
 function ejercicio4() {
   console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
 
+  const nombre = "Francisco";
+  const ciclo = "DAW";
+  const curso = "2026/2027";
+  const aficion = "videojuegos";
+
+  let horas = 2;
+  console.log("Horas iniciales:", horas);
+
+  horas += 1;
+  console.log("Horas después de sumar 1:", horas);
+
+  const ficha = `Me llamo ${nombre}, estudio ${ciclo} en el curso ${curso} y mi afición es ${aficion}. Dedico ${horas} horas al día.`;
+
+  console.log(ficha);
+  alert(ficha);
+
+  const fichaConMas = "Me llamo " + nombre + ", estudio " + ciclo +
+    " en el curso " + curso + " y mi afición es " + aficion + ". Dedico " + horas + " horas al día.";
+    console.log("¿Las dos cadenas son iguales?", ficha === fichaConMas);
+
   // Tus datos, con const
-  const nombre = "Francisco Fernández Ortega";
+
   // TODO: ciclo, curso y una afición, también con const.
 
   // Un dato que cambia, con let
   // TODO: por ejemplo, las horas que has estudiado esta semana. Después súmale algo con +=.
 
   // La ficha con plantilla de cadena: backticks (`) y ${ }
-  const ficha = `Soy ${nombre}.`;
+
   // TODO: completa la ficha con todos tus datos y muéstrala con alert() y en la consola.
 
   // TODO: escribe la misma ficha concatenando con + en una constante fichaConMas y muéstrala en la consola.
