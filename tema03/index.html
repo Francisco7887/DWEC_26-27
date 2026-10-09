@@ -138,7 +138,8 @@
         </div>
 
         <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong> aunque representa la ausencia de valor, typeof null devuelve "object" por una particularidad histórica de JavaScript la cual han dejado por vagos.</p>
+        <p class="small mb-0"><strong>El caso de null:</strong> aunque representa la ausencia de valor, typeof null
+          devuelve "object" por una particularidad histórica de JavaScript la cual han dejado por vagos.</p>
       </div>
 
       <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
@@ -369,13 +370,13 @@
             </tbody>
           </table>
         </div>
-            <p class="small mb-0"><strong>Explicación:</strong>
-              Con el operador +, si uno de los valores es una cadena,
-              JavaScript puede concatenarlos como texto. Con los operadores
-              - y *, convierte las cadenas numéricas en números.
-              El operador === compara el valor y el tipo, mientras que ==
-              permite conversiones de tipo.
-            </p>
+        <p class="small mb-0"><strong>Explicación:</strong>
+          Con el operador +, si uno de los valores es una cadena,
+          JavaScript puede concatenarlos como texto. Con los operadores
+          - y *, convierte las cadenas numéricas en números.
+          El operador === compara el valor y el tipo, mientras que ==
+          permite conversiones de tipo.
+        </p>
 
       </div>
 
@@ -394,39 +395,37 @@
       <!-- 1) Título del ejercicio -->
       <div class="card-header d-flex align-items-center gap-2">
         <span class="badge text-bg-primary">Ejercicio 4</span>
-        <h2 class="h5 mb-0">Conversiones explícitas</h2>
+        <h2 class="h5 mb-0">Plantillas de cadena y const</h2>
       </div>
 
       <div class="card-body">
 
-        <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
+        <!-- 2) El código: cuando termines, copia aquí tu función ejercicio4() de js/app.js.
                 Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
         <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio4() {
-          console.log("--- Ejercicio 4 · Conversiones explícitas ---");
+          console.log("--- Ejercicio 4 · Plantillas de cadena y const ---");
 
-          const a = String(123);   // espero "123"
-          console.log("String(123) →", a, typeof a);
+          const nombre = "Francisco";
+          const ciclo = "DAW";
+          const curso = "2026/2027";
+          const aficion = "videojuegos";
 
-          const b = Number("123"); // espero 123
-          console.log('Number("123") →', b, typeof b);
+          let horas = 2;
+          console.log("Horas iniciales:", horas);
 
-          const c = Number("12abc"); // espero NaN
-          console.log('Number("12abc") →', c, typeof c);
+          horas += 1;
+          console.log("Horas después de sumar 1:", horas);
 
-          const d = Number(""); // espero 0
-          console.log('Number("") →', d, typeof d);
+          const ficha = `Me llamo ${nombre}, estudio ${ciclo} en el curso ${curso} y mi afición es ${aficion}. Dedico ${horas} horas al día.`;
 
-          const e = Number(true); // espero 1
-          console.log("Number(true) →", e, typeof e);
+          console.log(ficha);
+          alert(ficha);
 
-          const f = Boolean(0); // espero false
-          console.log("Boolean(0) →", f, typeof f);
+          const fichaConMas = "Me llamo " + nombre + ", estudio " + ciclo +
+            " en el curso " + curso + " y mi afición es " + aficion +
+            ". Dedico " + horas + " horas al día.";
 
-          const g = Boolean("texto"); // espero true
-          console.log('Boolean("texto") →', g, typeof g);
-
-          const h = Boolean(""); // espero false
-          console.log('Boolean("") →', h, typeof h);
+          console.log("¿Las dos cadenas son iguales?", ficha === fichaConMas);
         }</code></pre>
 
         <!-- 3) La tabla «Espero / Sale», rellenada a mano.
@@ -436,63 +435,38 @@
           <table class="table table-sm table-striped align-middle mb-2">
             <thead class="table-primary">
               <tr>
-                <th scope="col">Variable</th>
-                <th scope="col">Valor</th>
+                <th scope="col">Comprobación</th>
                 <th scope="col">Espero</th>
                 <th scope="col">Sale</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row"><code>String(123)</code></th>
-                <td><code>"123"</code></td>
-                <td><code>string</code></td>
-                <td><code>string</code></td>
+                <th scope="row">Horas iniciales</th>
+                <td><code>2</code></td>
+                <td><code>2</code></td>
               </tr>
               <tr>
-                <th scope="row"><code>Number("123")</code></th>
-                <td><code>123</code></td>
-                <td><code>number</code></td>
-                <td><code>number</code></td>
+                <th scope="row">Horas después de sumar 1</th>
+                <td><code>3</code></td>
+                <td><code>3</code></td>
               </tr>
               <tr>
-                <th scope="row"><code>Number("12abc")</code></th>
-                <td><code>NaN</code></td>
-                <td><code>number</code></td>
-                <td><code>number</code></td>
-              </tr>
-              <tr>
-                <th scope="row"><code>Number("")</code></th>
-                <td><code>0</code></td>
-                <td><code>number</code></td>
-                <td><code>number</code></td>
-              </tr>
-              <tr>
-                <th scope="row"><code>Number(true)</code></th>
-                <td><code>1</code></td>
-                <td><code>number</code></td>
-                <td><code>number</code></td>
-              </tr>
-              <tr>
-                <th scope="row"><code>Boolean(0)</code></th>
-                <td><code>false</code></td>
-                <td><code>boolean</code></td>
-                <td><code>boolean</code></td>
-              </tr>
-              <tr>
-                <th scope="row"><code>Boolean("texto")</code></th>
+                <th scope="row">Comparación con <code>===</code></th>
                 <td><code>true</code></td>
-                <td><code>boolean</code></td>
-                <td><code>boolean</code></td>
-              </tr>
-              <tr>
-                <th scope="row"><code>Boolean("")</code></th>
-                <td><code>false</code></td>
-                <td><code>boolean</code></td>
-                <td><code>boolean</code></td>
+                <td><code>true</code></td>
               </tr>
             </tbody>
           </table>
+
+          <div class="alert alert-danger mt-3" role="alert">
+            <h3 class="h6 alert-heading">Error al reasignar una constante</h3>
+            <p class="mb-0">
+              Una variable declarada con <code>const</code> no admite una nueva
+              asignación. Si intento ejecutar <code>nombre = "Otro nombre";</code>
+              dentro de la función, JavaScript genera un error.
+            </p>
+          </div>
         </div>
       </div>
 
