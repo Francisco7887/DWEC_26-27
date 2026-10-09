@@ -48,7 +48,7 @@ function ejercicio2() {
   console.log("--- Ejercicio 2 · Conversiones explícitas ---");
 
   // Ejemplo: una conversión, tu predicción y el resultado con su tipo
-  const a = String(123);   // espero [tu predicción]
+  const a = String(123);   // espero "123"
   console.log("String(123) →", a, typeof a);
 
   const b = Number("123"); // espero 123
@@ -85,26 +85,26 @@ function ejercicio3() {
 
   // Ejemplo: una expresión que mezcla tipos
   console.log('"5" - 2 →', "5" - 2); // espero 3
+
+  // TODO: cinco expresiones más que mezclen tipos (al menos dos inventadas por ti), cada una con su «espero …».
   console.log('"5" + 2 →', "5" + 2); // espero "52"
   console.log('"10" * 2 →', "10" * 2); // espero 20
   console.log('"12" / 3 →', "12" / 3); // espero 4
   console.log('true + 2 →', true + 2); // espero 3
   console.log('"hola" + 2 →', "hola" + 2); // espero "hola2"
 
-
-  // TODO: cinco expresiones más que mezclen tipos (al menos dos inventadas por ti), cada una con su «espero …».
-
   // Ejemplo: la misma pareja comparada con == y con ===
   console.log('5 == "5" →', 5 == "5"); // espero true
   console.log('5 === "5" →', 5 === "5"); // espero false
 
+  // TODO: haz lo mismo con 0 y false, y con null y undefined.
   console.log('0 == false →', 0 == false); // espero true
   console.log('0 === false →', 0 === false); // espero false
 
   console.log('null == undefined →', null == undefined); // espero true
   console.log('null === undefined →', null === undefined); // espero false
 
-  // TODO: haz lo mismo con 0 y false, y con null y undefined.
+
 }
 
 
@@ -113,6 +113,7 @@ function ejercicio4() {
   console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
 
   const nombre = "Francisco";
+  //const nombre = "otro nombre"; esto genera un error porque nombre es const y no se puede reasignar
   const ciclo = "DAW";
   const curso = "2026/2027";
   const aficion = "videojuegos";
@@ -123,14 +124,13 @@ function ejercicio4() {
   horas += 1;
   console.log("Horas después de sumar 1:", horas);
 
-  const ficha = `Me llamo ${nombre}, estudio ${ciclo} en el curso ${curso} y mi afición es ${aficion}. Dedico ${horas} horas al día.`;
+  const ficha = `Me llamo ${nombre}, estudio ${ciclo} en el curso ${curso} y mi afición es jugar ${aficion}. Dedico ${horas} horas al día.`;
 
   console.log(ficha);
   alert(ficha);
 
-  const fichaConMas = "Me llamo " + nombre + ", estudio " + ciclo +
-    " en el curso " + curso + " y mi afición es " + aficion + ". Dedico " + horas + " horas al día.";
-    console.log("¿Las dos cadenas son iguales?", ficha === fichaConMas);
+  const fichaConMas = "Me llamo " + nombre + ", estudio " + ciclo + " en el curso " + curso + " y mi afición es jugar " + aficion + ". Dedico " + horas + " horas al día.";
+  console.log("¿Las dos cadenas son iguales?", ficha === fichaConMas);
 
   // Tus datos, con const
 
