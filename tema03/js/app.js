@@ -51,6 +51,27 @@ function ejercicio2() {
   const a = String(123);   // espero [tu predicción]
   console.log("String(123) →", a, typeof a);
 
+  const b = Number("123"); // espero 123
+  console.log('Number("123") →', b, typeof b);
+
+  const c = Number("12abc"); // espero NaN
+  console.log('Number("12abc") →', c, typeof c);
+
+  const d = Number(""); // espero 0
+  console.log('Number("") →', d, typeof d);
+
+  const e = Number(true); // espero 1
+  console.log("Number(true) →", e, typeof e);
+
+  const f = Boolean(0); // espero false
+  console.log("Boolean(0) →", f, typeof f);
+
+  const g = Boolean("texto"); // espero true
+  console.log('Boolean("texto") →', g, typeof g);
+
+  const h = Boolean(""); // espero false
+  console.log('Boolean("") →', h, typeof h);
+
   // TODO: el resto de conversiones obligatorias, cada una con su «espero …»:
   //       Number("123"), Number("12abc"), Number(""), Number(true),
   //       Boolean(0), Boolean("texto") y Boolean("").
