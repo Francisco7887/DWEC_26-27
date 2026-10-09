@@ -155,8 +155,8 @@
 
       <!-- 1) Título del ejercicio -->
       <div class="card-header d-flex align-items-center gap-2">
-        <span class="badge text-bg-primary">Ejercicio 1</span>
-        <h2 class="h5 mb-0">Variables y typeof</h2>
+        <span class="badge text-bg-primary">Ejercicio 2</span>
+        <h2 class="h5 mb-0">Conversiones explícitas</h2>
       </div>
 
       <div class="card-body">
@@ -166,7 +166,7 @@
         <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio2() {
           console.log("--- Ejercicio 2 · Conversiones explícitas ---");
 
-          const a = String(123);   // espero [tu predicción]
+          const a = String(123);   // espero "123"
           console.log("String(123) →", a, typeof a);
 
           const b = Number("123"); // espero 123
@@ -206,30 +206,61 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">edad</th>
-                <td><code>20</code></td>
+                <th scope="row"><code>String(123)</code></th>
+                <td><code>"123"</code></td>
+                <td><code>string</code></td>
+                <td><code>string</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>Number("123")</code></th>
+                <td><code>123</code></td>
                 <td><code>number</code></td>
                 <td><code>number</code></td>
               </tr>
               <tr>
-                <th scope="row">[variable]</th>
-                <td><code>[valor]</code></td>
-                <td><code>[lo que esperas]</code></td>
-                <td><code>[lo que sale]</code></td>
+                <th scope="row"><code>Number("12abc")</code></th>
+                <td><code>NaN</code></td>
+                <td><code>number</code></td>
+                <td><code>number</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>Number("")</code></th>
+                <td><code>0</code></td>
+                <td><code>number</code></td>
+                <td><code>number</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>Number(true)</code></th>
+                <td><code>1</code></td>
+                <td><code>number</code></td>
+                <td><code>number</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>Boolean(0)</code></th>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td><code>boolean</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>Boolean("texto")</code></th>
+                <td><code>true</code></td>
+                <td><code>boolean</code></td>
+                <td><code>boolean</code></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>Boolean("")</code></th>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td><code>boolean</code></td>
               </tr>
             </tbody>
-          </table>
-        </div>
-
-        <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong> [explica en una línea qué pasa con typeof null]</p>
       </div>
 
-      <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
+      <!-- 5) El botón. onclick="ejercicio2()" hace que, al pulsarlo, se ejecute la función ejercicio2() de js/app.js.
               Cómo funciona lo veremos más adelante, con los eventos. De momento, cópialo tal cual y cambia solo el número. -->
       <div class="card-footer">
-        <button type="button" class="btn btn-primary" onclick="ejercicio1()">
-          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 1
+        <button type="button" class="btn btn-primary" onclick="ejercicio2()">
+          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 2
         </button>
         <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
       </div>
