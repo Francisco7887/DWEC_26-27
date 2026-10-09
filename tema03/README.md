@@ -50,8 +50,8 @@ En esta tarea he aprendido a distinguir los tipos de datos de JavaScript usando 
 
 ## Fuentes
 
-ChatGPT (OpenAI)(https://chatgpt.com/)
-w3schools.com(https://www.w3schools.com/bootstrap5/index.php)
+[ChatGPT (OpenAI)](https://chatgpt.com/)
+[w3schools.com](https://www.w3schools.com/bootstrap5/index.php)
 
 ## Uso de IA
 
