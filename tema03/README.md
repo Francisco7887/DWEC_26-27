@@ -16,7 +16,7 @@
 
 ### a) La página entera
 
-<img src="capturas/a-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
+<img src="./capturas/captura a.png" alt="La página entera con mi nombre en la navbar" width="600">
 
 [Qué se ve: tu nombre en la navbar, las cuatro cards y los fallos de predicción marcados.]
 
