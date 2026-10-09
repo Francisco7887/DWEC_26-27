@@ -113,7 +113,7 @@ function ejercicio4() {
   console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
 
   const nombre = "Francisco";
-  //const nombre = "otro nombre"; esto genera un error porque nombre es const y no se puede reasignar
+  nombre = "otro nombre";
   const ciclo = "DAW";
   const curso = "2026/2027";
   const aficion = "videojuegos";

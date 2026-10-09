@@ -1,6 +1,6 @@
 # Tarea 3 · Variables, tipos y conversiones
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** Francisco Fernández Ortega · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
 > **Plantilla de la tarea 3.** Cómo usarla:
 >
@@ -16,42 +16,43 @@
 
 ### a) La página entera
 
-<img src="./capturas/captura a.png" alt="La página entera con mi nombre en la navbar" width="600">
+<img src="capturas/captura a.png" alt="La página entera con mi nombre en la navbar" width="600">
 
-[Qué se ve: tu nombre en la navbar, las cuatro cards y los fallos de predicción marcados.]
+Se ve mi nombre en la barra de navegación y las cuatro tarjetas de ejercicios. Cada tarjeta contiene el código de ejemplo y una tabla con las predicciones y los resultados.
 
 ### b) Consola del ejercicio 1
 
-![Consola del ejercicio 1](capturas/b-consola-ej1.png)
+![Consola del ejercicio 1](capturas/captura%20b.png)
 
-[Qué se ve, en una o dos líneas.]
+Se muestran los valores de las variables y sus tipos mediante typeof. También se comprueba el caso especial de typeof null, que devuelve "object", y el tipo bigint.
 
 ### c) Consola del ejercicio 2
 
-![Consola del ejercicio 2](capturas/c-consola-ej2.png)
+![Consola del ejercicio 2](capturas/captura%20c.png)
 
-[Qué se ve, en una o dos líneas.]
+Se muestran los resultados de las conversiones con String(), Number() y Boolean(), junto con el tipo de cada resultado. Por ejemplo, Number("12abc") devuelve NaN, cuyo tipo sigue siendo number.
 
 ### d) Consola del ejercicio 3
 
-![Consola del ejercicio 3](capturas/d-consola-ej3.png)
+![Consola del ejercicio 3](capturas/captura%20d.png)
 
-[Qué se ve, en una o dos líneas.]
+Se observan expresiones que mezclan cadenas, números y booleanos, además de comparaciones con == y ===. Los resultados permiten comprobar las diferencias entre la igualdad flexible y la igualdad estricta.
 
 ### e) Consola del ejercicio 4, con el error de la const
 
-![Consola del ejercicio 4 con el error de la const](capturas/e-consola-ej4.png)
+![Consola del ejercicio 4 con el error de la const](capturas/captura%20e.png)
 
-[Qué se ve, en una o dos líneas.]
+Se muestra la ficha personal creada con una plantilla de cadena y se comprueba que la concatenación con + produce el mismo texto. También se incluye la prueba del error que se genera al intentar reasignar una constante.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿qué conversiones te resultaron más intuitivas y cuáles te sorprendieron? Pon ejemplos concretos de tus tablas.]
+En esta tarea he aprendido a distinguir los tipos de datos de JavaScript usando typeof. Me ha llamado la atención que typeof null devuelva "object", aunque null representa la ausencia de un valor. También he comprobado que Number("") devuelve 0 y que Number("12abc") devuelve NaN. En las expresiones mixtas, el operador + puede concatenar texto, mientras que operadores como - convierten cadenas numéricas en números. He visto que == permite conversiones de tipo, pero === compara también el tipo de los valores. Por último, he practicado la diferencia entre let, que permite reasignar una variable, y const, que no permite asignarle otro valor.
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+ChatGPT (OpenAI)(https://chatgpt.com/)
+w3schools.com(https://www.w3schools.com/bootstrap5/index.php)
 
 ## Uso de IA
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+He utilizado ChatGPT como apoyo para comprender y revisar partes de la tarea, resolver dudas sobre JavaScript, comprobar las conversiones y corregir la estructura del HTML. Después he revisado y adaptado las propuestas a mis archivos, y he probado los ejercicios en el navegador para comprobar los resultados.
