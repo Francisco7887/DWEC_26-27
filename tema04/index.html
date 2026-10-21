@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +12,7 @@
   <!-- Iconos de Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
+
 <body>
 
   <!--
@@ -33,12 +35,13 @@
   <header class="bg-body-tertiary border-bottom py-4 mb-4">
     <div class="container">
       <h1 class="h2 mb-1">Calculadora y bucles</h1>
-      <p class="lead mb-0 text-body-secondary">Una simple calculadora con operaciones básicas y ejemplos de bucles en JavaScript.</p>
+      <p class="lead mb-0 text-body-secondary">Una simple calculadora con operaciones básicas y ejemplos de bucles en
+        JavaScript.</p>
     </div>
   </header>
 
 
-    <!-- TODO: organiza las cards con la rejilla de Bootstrap: <div class="row"> y dentro <div class="col-12 col-lg-...">.
+  <!-- TODO: organiza las cards con la rejilla de Bootstrap: <div class="row"> y dentro <div class="col-12 col-lg-...">.
     En el móvil, una debajo de otra; en pantalla grande, repartidas en columnas. -->
 
   <main class="container mb-5">
@@ -77,59 +80,82 @@
 
         <div class="card-header d-flex justify-content-between align-items-center">
           <span><i class="bi bi-display"></i> Resultado</span>
-          <button type="button" class="btn btn-outline-secondary btn-sm"
-            onclick="limpiarSalida()">
+          <button type="button" class="btn btn-outline-secondary btn-sm" onclick="limpiarSalida()">
             <i class="bi bi-trash"></i> Borrar
           </button>
         </div>
 
-          <div class="card-body">
-            <div id="salida"></div>
-          </div>
+        <div class="card-body">
+          <div id="salida"></div>
+        </div>
       </section>
     </div>
 
-      <!-- EJERCICIO 1 · Calculadora -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <section class="card h-100">
-          <div class="card-header">
-            <span class="badge text-bg-primary">1</span>
-            Calculadora
+    <!-- EJERCICIO 1 · Calculadora -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <section class="card h-100">
+        <div class="card-header">
+          <span class="badge text-bg-primary">1</span>
+          Calculadora
+        </div>
+
+        <div class="card-body">
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-primary" onclick="sumar()">
+              + Sumar
+            </button>
+
+            <button type="button" class="btn btn-primary" onclick="restar()">
+              − Restar
+            </button>
+
+            <button type="button" class="btn btn-primary" onclick="multiplicar()">
+              × Multiplicar
+            </button>
+
+            <button type="button" class="btn btn-primary" onclick="dividir()">
+              ÷ Dividir
+            </button>
+
+            <button type="button" class="btn btn-primary" onclick="potencia()">
+              x² Potencia
+            </button>
+
+            <button type="button" class="btn btn-primary" onclick="modulo()">
+              % Módulo
+            </button>
           </div>
-
-          <div class="card-body">
-            <div class="d-grid gap-2">
-              <button type="button" class="btn btn-primary" onclick="sumar()">
-                + Sumar
-              </button>
-
-              <button type="button" class="btn btn-primary" onclick="restar()">
-                − Restar
-              </button>
-
-              <button type="button" class="btn btn-primary" onclick="multiplicar()">
-                × Multiplicar
-              </button>
-
-              <button type="button" class="btn btn-primary" onclick="dividir()">
-                ÷ Dividir
-              </button>
-
-              <button type="button" class="btn btn-primary" onclick="potencia()">
-                x² Potencia
-              </button>
-
-              <button type="button" class="btn btn-primary" onclick="modulo()">
-                % Módulo
-              </button>
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
+    </div>
 
     <!-- TODO EJERCICIO 2 · Comparaciones: una card con los botones
     «¿Cuál es mayor?» → cualEsMayor()     «¿Par o impar?» → parOImpar() -->
-    
+
+    <div class="col-12 col-md-6 col-lg-3">
+      <section class="card h-100">
+        <div class="card-header">
+          <span class="badge text-bg-info">2</span>
+          Comparaciones
+        </div>
+
+        <div class="card-body">
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-info" onclick="cualEsMayor()">
+              ¿Cuál es mayor?
+            </button>
+
+            <button type="button" class="btn btn-info" onclick="parOImpar()">
+              ¿Par o impar?
+            </button>
+          </div>
+
+          <p class="form-text mt-3">
+            Para par o impar solo se utiliza el número 1.
+          </p>
+        </div>
+      </section>
+    </div>
 
     <!-- TODO EJERCICIOS 3 Y 4 · Bucles: una card con dos grupos de botones (btn-group)
     Con texto:  for → bucleFor()    while → bucleWhile()    do…while → bucleDoWhile()
@@ -148,4 +174,5 @@
   <script src="js/ayudas.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>
