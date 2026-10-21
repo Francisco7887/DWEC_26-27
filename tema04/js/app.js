@@ -173,6 +173,22 @@ function parOImpar() {
 function bucleFor() {
   const veces = leerNumero("numero1");
   limpiarSalida();
+  
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES) {
+    mostrar("Introduce un número entero que no supere 20.", "danger");
+    console.warn("for: número no válido");
+  } else {
+    let contador = 0;
+
+    for (let i = 1; i <= veces; i++) {
+      anadirLinea(`for · repetición ${i} de ${veces}`);
+      contador++;
+    }
+
+    const texto = contador === 1 ? "repetición" : "repeticiones";
+    anadirLinea(`Total: ${contador} ${texto}`);
+    console.log(`for: ${contador} repeticiones`);
+  }
 
   // TODO: si el número falta, tiene decimales o pasa de MAXIMO_REPETICIONES, muestra un error en rojo.
   // TODO: si no, repite con un for tantas veces como diga «veces». En cada vuelta:
@@ -183,10 +199,50 @@ function bucleFor() {
 
 function bucleWhile() {
   // TODO: lo mismo que bucleFor(), con un while.
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES) {
+    mostrar("Introduce un número entero que no supere 20.", "danger");
+    console.warn("while: número no válido");
+  } else {
+    let contador = 0;
+    let i = 1;
+
+    while (i <= veces) {
+      anadirLinea(`while · repetición ${i} de ${veces}`);
+      contador++;
+      i++;
+    }
+
+    const texto = contador === 1 ? "repetición" : "repeticiones";
+    anadirLinea(`Total: ${contador} ${texto}`);
+    console.log(`while: ${contador} repeticiones`);
+  }
 }
 
 function bucleDoWhile() {
   // TODO: lo mismo que bucleFor(), con un do…while. Pruébalo con 0 y con un negativo: ¿qué pasa?
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES) {
+    mostrar("Introduce un número entero que no supere 20.", "danger");
+    console.warn("do...while: número no válido");
+  } else {
+    let contador = 0;
+    let i = 1;
+
+    do {
+      anadirLinea(`do...while · repetición ${i} de ${veces}`);
+      contador++;
+      i++;
+    } while (i <= veces);
+
+    const texto = contador === 1 ? "repetición" : "repeticiones";
+    anadirLinea(`Total: ${contador} ${texto}`);
+    console.log(`do...while: ${contador} repeticiones`);
+  }
 }
 
 
@@ -198,12 +254,73 @@ function badgesFor() {
   // TODO: como bucleFor(), pero cada vuelta añade un badge con el número de la repetición:
   //         anadirBadge(i, "primary");
   // TODO: los pares, de un color y los impares, de otro. Elige el color con el operador ternario.
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES) {
+    mostrar("Introduce un número entero que no supere 20.", "danger");
+    console.warn("badgesFor: número no válido");
+  } else {
+    let contador = 0;
+
+    for (let i = 1; i <= veces; i++) {
+      const color = i % 2 === 0 ? "success" : "primary";
+      anadirBadge(i, color);
+      contador++;
+    }
+
+    const texto = contador === 1 ? "repetición" : "repeticiones";
+    anadirLinea(`Total: ${contador} ${texto}`);
+    console.log(`badgesFor: ${contador} repeticiones`);
+  }
 }
 
 function badgesWhile() {
   // TODO: lo mismo que badgesFor(), con un while.
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES) {
+    mostrar("Introduce un número entero que no supere 20.", "danger");
+    console.warn("badgesWhile: número no válido");
+  } else {
+    let contador = 0;
+    let i = 1;
+
+    while (i <= veces) {
+      const color = i % 2 === 0 ? "success" : "primary";
+      anadirBadge(i, color);
+      contador++;
+      i++;
+    }
+
+    const texto = contador === 1 ? "repetición" : "repeticiones";
+    anadirLinea(`Total: ${contador} ${texto}`);
+    console.log(`badgesWhile: ${contador} repeticiones`);
+  }
 }
 
 function badgesDoWhile() {
   // TODO: lo mismo que badgesFor(), con un do…while.
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES) {
+    mostrar("Introduce un número entero que no supere 20.", "danger");
+    console.warn("badgesDoWhile: número no válido");
+  } else {
+    let contador = 0;
+    let i = 1;
+
+    do {
+      const color = i % 2 === 0 ? "success" : "primary";
+      anadirBadge(i, color);
+      contador++;
+      i++;
+    } while (i <= veces);
+
+    const texto = contador === 1 ? "repetición" : "repeticiones";
+    anadirLinea(`Total: ${contador} ${texto}`);
+    console.log(`badgesDoWhile: ${contador} repeticiones`);
+  }
 }
