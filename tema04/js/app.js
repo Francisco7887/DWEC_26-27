@@ -127,11 +127,41 @@ function modulo() {
 
 function cualEsMayor() {
   // TODO: con if, else if y else, di cuál de los dos números es mayor o si son iguales.
+  const n1 = leerNumero("numero1");
+  const n2 = leerNumero("numero2");
+
+  if (Number.isNaN(n1) || Number.isNaN(n2)) {
+    mostrar("Escribe los dos números antes de comparar.", "danger");
+    console.warn("Comparación: falta algún número");
+  } else if (n1 > n2) {
+    mostrar(`${n1} es mayor que ${n2}.`);
+    console.log(`${n1} es mayor que ${n2}`);
+  } else if (n1 < n2) {
+    mostrar(`${n2} es mayor que ${n1}.`);
+    console.log(`${n2} es mayor que ${n1}`);
+  } else {
+    mostrar(`Los dos números son iguales: ${n1}.`);
+    console.log("Los dos números son iguales");
+  }
 }
 
 function parOImpar() {
   // TODO: solo con el número 1. Usa el operador % y el ternario ( condición ? "par" : "impar" ).
   // TODO: si el número tiene decimales, avisa de que no es ni par ni impar.
+  const n1 = leerNumero("numero1");
+
+  if (Number.isNaN(n1)) {
+    mostrar("Escribe el primer número.", "danger");
+    console.warn("Par o impar: falta el primer número");
+  } else if (n1 % 1 !== 0) {
+    mostrar(`${n1} tiene decimales: no es par ni impar.`, "warning");
+    console.log(`${n1} tiene decimales`);
+  } else {
+    const resultado = n1 % 2 === 0 ? "par" : "impar";
+
+    mostrar(`${n1} es ${resultado}.`);
+    console.log(`${n1} es ${resultado}`);
+  }
 }
 
 
