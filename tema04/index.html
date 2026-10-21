@@ -90,23 +90,50 @@
     </div>
 
       <!-- EJERCICIO 1 · Calculadora -->
-      <section class="card mb-4">
-        <div class="card-header">Calculadora</div>
-        <div class="card-body">
-          <!-- Cada botón llama con onclick a su función de js/app.js, como en la tarea 3 -->
-          <button type="button" class="btn btn-primary" onclick="sumar()">Sumar</button>
-          <!-- TODO: los botones Restar, Multiplicar, Dividir, Potencia y Módulo:
-                    restar(), multiplicar(), dividir(), potencia() y modulo() -->
-        </div>
-      </section>
-    </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <section class="card h-100">
+          <div class="card-header">
+            <span class="badge text-bg-primary">1</span>
+            Calculadora
+          </div>
+
+          <div class="card-body">
+            <div class="d-grid gap-2">
+              <button type="button" class="btn btn-primary" onclick="sumar()">
+                + Sumar
+              </button>
+
+              <button type="button" class="btn btn-primary" onclick="restar()">
+                − Restar
+              </button>
+
+              <button type="button" class="btn btn-primary" onclick="multiplicar()">
+                × Multiplicar
+              </button>
+
+              <button type="button" class="btn btn-primary" onclick="dividir()">
+                ÷ Dividir
+              </button>
+
+              <button type="button" class="btn btn-primary" onclick="potencia()">
+                x² Potencia
+              </button>
+
+              <button type="button" class="btn btn-primary" onclick="modulo()">
+                % Módulo
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
 
     <!-- TODO EJERCICIO 2 · Comparaciones: una card con los botones
-               «¿Cuál es mayor?» → cualEsMayor()     «¿Par o impar?» → parOImpar() -->
+    «¿Cuál es mayor?» → cualEsMayor()     «¿Par o impar?» → parOImpar() -->
+    
 
     <!-- TODO EJERCICIOS 3 Y 4 · Bucles: una card con dos grupos de botones (btn-group)
-               Con texto:  for → bucleFor()    while → bucleWhile()    do…while → bucleDoWhile()
-               Con badges: for → badgesFor()   while → badgesWhile()   do…while → badgesDoWhile() -->
+    Con texto:  for → bucleFor()    while → bucleWhile()    do…while → bucleDoWhile()
+    Con badges: for → badgesFor()   while → badgesWhile()   do…while → badgesDoWhile() -->
 
   </main>
 
