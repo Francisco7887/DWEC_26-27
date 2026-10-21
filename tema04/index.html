@@ -37,56 +37,69 @@
     </div>
   </header>
 
+
     <!-- TODO: organiza las cards con la rejilla de Bootstrap: <div class="row"> y dentro <div class="col-12 col-lg-...">.
     En el móvil, una debajo de otra; en pantalla grande, repartidas en columnas. -->
 
-    <main class="container mb-5">
+  <main class="container mb-5">
     <div class="row g-4">
 
-    <!-- LOS NÚMEROS. No cambies los id: leerNumero("numero1") y leerNumero("numero2") los buscan por su id -->
-    <section class="card mb-4">
+      <!-- LOS NÚMEROS. No cambies los id: leerNumero("numero1") y leerNumero("numero2") los buscan por su id -->
+      <section class="card mb-4">
 
-      <div class="card-header">
-        Los números
-      </div>
+        <div class="card-header">
+          Los números
+        </div>
 
-      <div class="card-body">
-        <label for="numero1" class="form-label">
-          Número 1
-        </label>
-        <input type="number" id="numero1" class="form-control mb-3">
+        <div class="card-body">
+          <label for="numero1" class="form-label">
+            Número 1
+          </label>
+          <input type="number" id="numero1" class="form-control mb-3">
 
-        <label for="numero2" class="form-label">
-          Número 2
-        </label>
-        <input type="number" id="numero2" class="form-control">
+          <label for="numero2" class="form-label">
+            Número 2
+          </label>
+          <input type="number" id="numero2" class="form-control">
 
-        <p class="form-text">
-          El número 1 también indica cuántas veces se repite cada bucle. El máximo es 20.
-        </p>
+          <p class="form-text">
+            El número 1 también indica cuántas veces se repite cada bucle. El máximo es 20.
+          </p>
 
-      </div>
-    </section>
+        </div>
+      </section>
     </div>
 
     <!-- RESULTADO. Aquí escriben mostrar(), anadirLinea() y anadirBadge(). No cambies el id -->
-    <section class="card mb-4">
-      <div class="card-header">Resultado</div>
-      <div class="card-body">
-        <div id="salida"></div>
-      </div>
-    </section>
+    <div class="col-12 col-lg-9">
 
-    <!-- EJERCICIO 1 · Calculadora -->
-    <section class="card mb-4">
-      <div class="card-header">Calculadora</div>
-      <div class="card-body">
-        <!-- Cada botón llama con onclick a su función de js/app.js, como en la tarea 3 -->
-        <button type="button" class="btn btn-primary" onclick="sumar()">Sumar</button>
-        <!-- TODO: los botones Restar, Multiplicar, Dividir, Potencia y Módulo:
-                   restar(), multiplicar(), dividir(), potencia() y modulo() -->
-      </div>
-    </section>
+      <section class="card h-100">
+
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <span><i class="bi bi-display"></i> Resultado</span>
+          <button type="button" class="btn btn-outline-secondary btn-sm"
+            onclick="limpiarSalida()">
+            <i class="bi bi-trash"></i> Borrar
+          </button>
+        </div>
+
+          <div class="card-body">
+            <div id="salida"></div>
+          </div>
+      </section>
+    </div>
+
+      <!-- EJERCICIO 1 · Calculadora -->
+      <section class="card mb-4">
+        <div class="card-header">Calculadora</div>
+        <div class="card-body">
+          <!-- Cada botón llama con onclick a su función de js/app.js, como en la tarea 3 -->
+          <button type="button" class="btn btn-primary" onclick="sumar()">Sumar</button>
+          <!-- TODO: los botones Restar, Multiplicar, Dividir, Potencia y Módulo:
+                    restar(), multiplicar(), dividir(), potencia() y modulo() -->
+        </div>
+      </section>
+    </div>
 
     <!-- TODO EJERCICIO 2 · Comparaciones: una card con los botones
                «¿Cuál es mayor?» → cualEsMayor()     «¿Par o impar?» → parOImpar() -->
