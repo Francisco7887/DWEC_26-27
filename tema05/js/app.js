@@ -106,6 +106,19 @@ function cambiarTexto() {
   // TODO: lee lo escrito en #nuevoTexto con value y quítale los espacios de los extremos con trim().
   // TODO: si está vacío, muestra el error #error4 (quítale "d-none") y no cambies nada.
   // TODO: si no, pon ese texto en el primer párrafo de #contenido con textContent y oculta el error.
+  const texto = document.querySelector("#nuevoTexto").value.trim();
+  const error = document.querySelector("#error4");
+
+  if (texto === "") {
+    error.classList.remove("d-none");
+    console.log("Error: el texto está vacío");
+    return;
+  }
+
+  document.querySelector("#contenido p").textContent = texto;
+  error.classList.add("d-none");
+
+  console.log("Texto cambiado con textContent");
 }
 
 function cambiarConHtml() {
