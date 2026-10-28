@@ -224,4 +224,30 @@ function verDatosVentana() {
   //       lg (≥ 992), xl (≥ 1200) y xxl (≥ 1400). Escríbelo en #datoPunto.
   // TODO: el tamaño de la pantalla (screen.width y screen.height) en #datoPantalla.
   // TODO: la URL (location.href) en #datoUrl y el idioma del navegador (navigator.language) en #datoIdioma.
+
+  let punto;
+
+  if (ancho >= 1400) {
+    punto = "xxl";
+  } else if (ancho >= 1200) {
+    punto = "xl";
+  } else if (ancho >= 992) {
+    punto = "lg";
+  } else if (ancho >= 768) {
+    punto = "md";
+  } else if (ancho >= 576) {
+    punto = "sm";
+  } else {
+    punto = "xs";
+  }
+
+  document.querySelector("#datoPunto").textContent = punto;
+
+  document.querySelector("#datoPantalla").textContent = `${screen.width} × ${screen.height} px`;
+
+  document.querySelector("#datoUrl").textContent = location.href;
+
+  document.querySelector("#datoIdioma").textContent = navigator.language;
+
+  console.log("Se han mostrado los datos de la ventana y del navegador");
 }
