@@ -188,6 +188,25 @@ function borrarCompletadas() {
   // TODO: si no hay ninguna, avisa en #error5. Si hay, recórrelas con for…of y borra el <li> de cada una
   //       (el <li> es el padre de la casilla: parentElement).
   // TODO: actualiza #totalTareas.
+  const marcadas = document.querySelectorAll("#listaTareas input:checked");
+  const error = document.querySelector("#error5");
+
+  if (marcadas.length === 0) {
+    error.classList.remove("d-none");
+    error.textContent = "No hay tareas completadas para borrar.";
+    console.log("No hay tareas marcadas");
+    return;
+  }
+
+  for (const casilla of marcadas) {
+    casilla.parentElement.remove();
+  }
+
+  error.classList.add("d-none");
+
+  document.querySelector("#totalTareas").textContent = document.querySelectorAll("#listaTareas li").length;
+
+  console.log("Se han borrado las tareas completadas");
 }
 
 
