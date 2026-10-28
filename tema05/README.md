@@ -1,16 +1,12 @@
 # Tarea 5 · Manipular el DOM
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** [Francisco Fernández Ortega] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-> **Plantilla de la tarea 5.** Cómo usarla:
->
-> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema05`.
-> 2. `index.html` ya está maquetado: es la página que vas a manipular. No cambies los `id` ni las clases que usa el JavaScript.
-> 3. `js/app.js` trae una función por botón con `TODO`, y modelos en los ejercicios 1, 3 y 6.
-> 4. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
-> 5. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
+Descripción
 
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live** y probar los botones con la consola abierta (F12).]
+En esta tarea he trabajado con JavaScript para manipular el DOM de una página web. He practicado cómo seleccionar elementos HTML, modificar sus textos y clases, crear y eliminar párrafos, añadir eventos al ratón, gestionar una lista de tareas y consultar información de la ventana y del navegador.
+
+Para ejecutar la página, he abierto el proyecto en Visual Studio Code y he utilizado la extensión Live Server. También he comprobado el funcionamiento de los botones y los mensajes de la consola con las herramientas de desarrollador (F12).
 
 ## Capturas
 
