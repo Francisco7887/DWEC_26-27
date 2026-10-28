@@ -151,6 +151,36 @@ function anadirTarea() {
   //         · un <span> con el texto de la tarea (textContent).
   //       Cuelga el <li> de #listaTareas y vacía la casilla (value = "").
   // TODO: actualiza #totalTareas con el número de <li> que hay en la lista.
+  const entrada = document.querySelector("#tareaInput");
+  const texto = entrada.value.trim();
+  const error = document.querySelector("#error5");
+
+  if (texto === "") {
+    error.classList.remove("d-none");
+    error.textContent = "Escribe una tarea antes de añadirla.";
+    console.log("Error: la tarea está vacía");
+    return;
+  }
+
+  const li = document.createElement("li");
+  li.classList.add("list-group-item");
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.classList.add("form-check-input");
+
+  const span = document.createElement("span");
+  span.textContent = " " + texto;
+
+  li.append(checkbox, span);
+  document.querySelector("#listaTareas").append(li);
+
+  entrada.value = "";
+  error.classList.add("d-none");
+
+  document.querySelector("#totalTareas").textContent = document.querySelectorAll("#listaTareas li").length;
+
+  console.log("Tarea añadida: " + texto);
 }
 
 function borrarCompletadas() {
