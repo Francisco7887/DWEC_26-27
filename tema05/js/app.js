@@ -124,6 +124,19 @@ function cambiarTexto() {
 function cambiarConHtml() {
   // TODO: lo mismo que cambiarTexto(), pero con innerHTML.
   //       Prueba las dos con <b>hola</b> y explica en el README qué diferencia ves y por qué es peligroso.
+  const texto = document.querySelector("#nuevoTexto").value.trim();
+  const error = document.querySelector("#error4");
+
+  if (texto === "") {
+    error.classList.remove("d-none");
+    console.log("Error: el texto está vacío");
+    return;
+  }
+
+  document.querySelector("#contenido p").innerHTML = texto;
+  error.classList.add("d-none");
+
+  console.log("Texto cambiado con innerHTML");
 }
 
 
