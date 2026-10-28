@@ -60,6 +60,16 @@ function eliminarUltimo() {
   // TODO: busca el último párrafo de #contenido (lastElementChild).
   // TODO: si es null (ya no queda ninguno), muestra el aviso #aviso2 quitándole la clase "d-none".
   //       Si no, bórralo con remove().
+  const contenido = document.querySelector("#contenido");
+  const ultimo = contenido.lastElementChild;
+
+  if (ultimo === null) {
+    document.querySelector("#aviso2").classList.remove("d-none");
+    console.log("No quedan párrafos para eliminar");
+  } else {
+    ultimo.remove();
+    console.log("Se ha eliminado el último párrafo");
+  }
 }
 
 
