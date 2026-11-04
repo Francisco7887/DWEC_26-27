@@ -117,7 +117,7 @@ function anadirColor() {
   casilla.value = "";
   document.querySelector("#aviso2").classList.add("d-none");
   mostrarColores();
-  console.log("Ejercicio 2: push →", comoTexto(colores));
+  console.log("Ejercicio 2: push: ", comoTexto(colores));
 }
 
 function quitarUltimo() {
@@ -186,17 +186,36 @@ function pintarProductos(lista) {
 
 function mostrarProductos() {
   // TODO: pinta todos los productos con pintarProductos() y escribe en #mensaje3 cuántos hay.
+  pintarProductos(productos);
+  const mensaje = document.querySelector("#mensaje3");
+  mensaje.textContent = "Hay " + productos.length + " productos.";
 }
 
 function ordenarPorPrecio() {
-  // TODO: haz una copia del array con [...productos] y ordénala con sort() de más barato a más caro.
-  //       sort necesita una función de comparación: function (a, b) { return ... }.
-  //       ¿Por qué una copia? Explícalo en el README.
-  // TODO: pinta la copia y escribe en #mensaje3 cómo están ordenados.
+  const copiaProductos = [...productos];
+  copiaProductos.sort(function(a, b) {
+    return a.precio - b.precio;
+  });
+
+  pintarProductos(copiaProductos);
+
+  const mensaje = document.querySelector("#mensaje3");
+  mensaje.textContent = "Productos ordenados por precio (de más barato a más caro).";
+  console.log("Ejercicio 3: ordenados por precio:", copiaProductos);
+
 }
 
 function filtrarCaros() {
   // TODO: con filter(), los productos de más de 50 €. Píntalos y escribe en #mensaje3 cuántos son.
+  const productosCaros = productos.filter(function(producto) {
+    return producto.precio > 50;
+  });
+
+  pintarProductos(productosCaros);
+
+  const mensaje = document.querySelector("#mensaje3");
+  mensaje.textContent = "Hay " + productosCaros.length + " productos de más de 50 €.";
+  console.log("Ejercicio 3: filtrados por precio > 50 €:", productosCaros);
 }
 
 function buscarProducto() {
@@ -214,7 +233,7 @@ mostrarProductos();   // la tabla completa nada más cargar
 // ============================================================
 
 const alumno = {
-  nombre: "[Tu nombre]",
+  nombre: "Francisco",
   notas: []
   // TODO: método anadirNota(nota): si la nota no es un número (Number.isNaN) o no está entre 0 y 10, devuelve false;
   //       si es válida, la añade a this.notas con push y devuelve true.
