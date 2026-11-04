@@ -219,10 +219,30 @@ function filtrarCaros() {
 }
 
 function buscarProducto() {
-  // TODO: lee #buscarProducto (value, trim y toLowerCase). Si está vacío, avisa en #mensaje3.
-  // TODO: con find(), el primer producto cuyo nombre en minúsculas contenga ese texto (includes).
-  // TODO: find devuelve undefined si no encuentra nada: en ese caso, dilo en #mensaje3 y vacía la tabla.
-  //       Si lo encuentra, píntalo solo a él: pintarProductos([encontrado]).
+  const texto = document.querySelector("#buscarProducto").value
+    .trim()
+    .toLowerCase();
+
+  const mensaje = document.querySelector("#mensaje3");
+
+  if (texto === "") {
+    mensaje.textContent = "Escribe el nombre de un producto.";
+    return;
+  }
+
+  const encontrado = productos.find(function (producto) {
+    return producto.nombre.toLowerCase().includes(texto);
+  });
+
+  if (encontrado === undefined) {
+    mensaje.textContent = "No se ha encontrado ningún producto.";
+    pintarProductos([]);
+  } else {
+    pintarProductos([encontrado]);
+    mensaje.textContent = "Producto encontrado: " + encontrado.nombre;
+  }
+
+  console.log("Ejercicio 3: búsqueda", encontrado);
 }
 
 mostrarProductos();   // la tabla completa nada más cargar
@@ -235,6 +255,27 @@ mostrarProductos();   // la tabla completa nada más cargar
 const alumno = {
   nombre: "Francisco",
   notas: []
+
+  anadirNota: function (nota) {
+    if (Number.isNaN(nota) || nota < 0 || nota > 10) {
+      return false;
+    }
+
+    this.notas.push(nota);
+    return true;
+  },
+
+  media: function () {
+    if (this.notas.length === 0) {
+      return 0;
+    }
+
+    const suma = this.notas.reduce(function (acumulador, nota) {
+      return acumulador + nota;
+    }, 0);
+
+    return suma / this.notas.length;
+  }
   // TODO: método anadirNota(nota): si la nota no es un número (Number.isNaN) o no está entre 0 y 10, devuelve false;
   //       si es válida, la añade a this.notas con push y devuelve true.
   // TODO: método media(): si no hay notas devuelve 0; si hay, la suma (con reduce) dividida entre el número de notas.
