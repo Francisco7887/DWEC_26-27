@@ -63,11 +63,11 @@ function verFicha() {
   presentacion.textContent = estudiante.presentarse();
 
   salida.append(lista, presentacion);
-  console.log("Ejercicio 1:",estudiante);
+  console.log("Ejercicio 1:", estudiante);
 }
 
 function cumplirAnios() {
-  estudiante.edad ++;
+  estudiante.edad++;
   verFicha();
 }
 
@@ -193,7 +193,7 @@ function mostrarProductos() {
 
 function ordenarPorPrecio() {
   const copiaProductos = [...productos];
-  copiaProductos.sort(function(a, b) {
+  copiaProductos.sort(function (a, b) {
     return a.precio - b.precio;
   });
 
@@ -207,7 +207,7 @@ function ordenarPorPrecio() {
 
 function filtrarCaros() {
   // TODO: con filter(), los productos de más de 50 €. Píntalos y escribe en #mensaje3 cuántos son.
-  const productosCaros = productos.filter(function(producto) {
+  const productosCaros = productos.filter(function (producto) {
     return producto.precio > 50;
   });
 
@@ -353,8 +353,18 @@ mostrarNotas();
 const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function verDobles() {
-  // TODO: con map(), un array nuevo con el doble de cada número.
-  // TODO: escribe en #salida5 el resultado y, debajo, numeros (para que se vea que no ha cambiado).
+  const dobles = numeros.map(function (numero) {
+    return numero * 2;
+  });
+
+  const salida = document.querySelector("#salida5");
+  salida.textContent = "";
+
+  salida.textContent =
+    "Dobles: " + comoTexto(dobles) +
+    "\nArray original: " + comoTexto(numeros);
+
+  console.log("Ejercicio 5: dobles", dobles);
 }
 
 function verPares() {
