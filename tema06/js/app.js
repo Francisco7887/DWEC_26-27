@@ -394,8 +394,25 @@ function verSuma() {
 }
 
 function verCadena() {
-  // TODO: los tres seguidos: los pares, después sus dobles y al final la suma de esos dobles.
-  //       Escribe en #salida5 una línea por paso.
+  const pares = numeros.filter(function (numero) {
+    return numero % 2 === 0;
+  });
+
+  const dobles = pares.map(function (numero) {
+    return numero * 2;
+  });
+
+  const suma = dobles.reduce(function (acumulador, numero) {
+    return acumulador + numero;
+  }, 0);
+
+  const salida = document.querySelector("#salida5");
+  salida.textContent =
+    "Pares: " + comoTexto(pares) +
+    "\nDobles de los pares: " + comoTexto(dobles) +
+    "\nSuma de los dobles: " + suma;
+
+  console.log("Ejercicio 5: cadena", pares, dobles, suma);
 }
 
 
@@ -407,12 +424,27 @@ const ciudadesOriginal = ["Granada", "Sevilla", "Málaga", "Córdoba", "Jaén", 
 let ciudades = [...ciudadesOriginal];   // una copia: splice cambia ciudades y así podemos restaurarla
 
 function mostrarCiudades() {
-  // TODO: vacía #ciudades y pon un badge por ciudad con su posición: «0 · Granada», «1 · Sevilla»...
-  //       Pista: forEach le pasa a tu función dos datos: function (ciudad, posicion) { ... }.
+  const salida = document.querySelector("#ciudades");
+  salida.textContent = "";
+
+  ciudades.forEach(function (ciudad, posicion) {
+    const badge = document.createElement("span");
+    badge.classList.add("badge", "text-bg-primary");
+    badge.textContent = posicion + " · " + ciudad;
+    salida.append(badge);
+  });
+
+  console.log("Ejercicio 6: ciudades", ciudades);
 }
 
 function verSlice() {
-  // TODO: guarda ciudades.slice(2, 5) y escribe en #salida6 qué devuelve y cuántas ciudades siguen en el array.
+  const resultado = ciudades.slice(2, 5);
+
+  document.querySelector("#salida6").textContent =
+    "slice(2, 5) devuelve: " + comoTexto(resultado) +
+    "\nSiguen quedando " + ciudades.length + " ciudades en el array.";
+
+  console.log("Ejercicio 6: slice", resultado);
 }
 
 function hacerSplice() {
