@@ -368,11 +368,29 @@ function verDobles() {
 }
 
 function verPares() {
-  // TODO: con filter(), los números pares (n % 2 === 0). Escríbelos en #salida5 como en verDobles().
+  const pares = numeros.filter(function (numero) {
+    return numero % 2 === 0;
+  });
+
+  const salida = document.querySelector("#salida5");
+  salida.textContent = "";
+
+  salida.textContent =
+    "Pares: " + comoTexto(pares) +
+    "\nArray original: " + comoTexto(numeros);
+
+  console.log("Ejercicio 5: pares", pares);
 }
 
 function verSuma() {
-  // TODO: con reduce(), la suma de todos los números (empieza en 0). Escríbela en #salida5.
+  const suma = numeros.reduce(function (acumulador, numero) {
+    return acumulador + numero;
+  }, 0);
+
+  const salida = document.querySelector("#salida5");
+  salida.textContent = "Suma de todos los números: " + suma;
+
+  console.log("Ejercicio 5: suma", suma);
 }
 
 function verCadena() {
