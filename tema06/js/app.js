@@ -448,17 +448,49 @@ function verSlice() {
 }
 
 function hacerSplice() {
-  // TODO: si quedan menos de 3 ciudades, avisa en #salida6 de que hay que restaurar y no hagas nada más.
-  // TODO: si no, ciudades.splice(2, 2): escribe en #salida6 qué devuelve y cuántas quedan, y vuelve a pintar.
+  if (ciudades.length < 3) {
+    document.querySelector("#salida6").textContent =
+      "Quedan menos de 3 ciudades. Debes restaurar la lista.";
+    return;
+  }
+
+  const eliminadas = ciudades.splice(2, 2);
+
+  document.querySelector("#salida6").textContent =
+    "splice(2, 2) devuelve: " + comoTexto(eliminadas) +
+    "\nQuedan " + ciudades.length + " ciudades.";
+
+  mostrarCiudades();
+
+  console.log("Ejercicio 6: splice", eliminadas);
 }
 
 function restaurarCiudades() {
-  // TODO: vuelve a copiar ciudadesOriginal en ciudades y pinta.
+  ciudades = [...ciudadesOriginal];
+
+  mostrarCiudades();
+
+  document.querySelector("#salida6").textContent =
+    "Las ciudades se han restaurado.";
 }
 
 function buscarCiudad() {
-  // TODO: lee #buscarCiudad (value y trim). Si está vacío, avisa.
-  // TODO: escribe en #salida6 lo que dan includes() e indexOf() con ese nombre. Si no está, indexOf da -1.
+  const nombre = document.querySelector("#buscarCiudad").value.trim();
+
+  if (nombre === "") {
+    document.querySelector("#salida6").textContent =
+      "Escribe el nombre de una ciudad.";
+    return;
+  }
+
+  const contiene = ciudades.includes(nombre);
+  const posicion = ciudades.indexOf(nombre);
+
+  document.querySelector("#salida6").textContent =
+    "includes(): " + contiene +
+    "\nindexOf(): " + posicion;
+
+  console.log("Ejercicio 6: búsqueda", contiene, posicion);
 }
 
 mostrarCiudades();
