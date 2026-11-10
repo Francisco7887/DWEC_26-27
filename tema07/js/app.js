@@ -38,12 +38,11 @@ function pintarLista(selector, textos) {
 // Ejercicio 1 · Precio final
 // ============================================================
 
-// TODO: calcularPrecio(base, iva, descuento) devuelve el precio final con return. No lee ni pinta nada.
-//       iva vale 21 por defecto y descuento, 0 por defecto (parámetros por defecto).
-//       Primero se resta el descuento (un tanto por ciento de la base) y después se suma el IVA.
-//       Comprueba en la consola: calcularPrecio(100) tiene que dar 121.
 function calcularPrecio(base, iva, descuento) {
+  let precioDescontado = base - (base * descuento / 100);
+  let precioFinal = precioDescontado + (precioDescontado * iva / 100);
 
+  return precioFinal;
 }
 
 // Ya está hecha: 74.8 → "74.80 €"
@@ -58,6 +57,45 @@ function mostrarPrecio() {
   //       use el valor por defecto. Si no, comprueba que está entre 0 y 100 y pásaselo.
   // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
   //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
+
+  let base = Number(Document.querySelector("#base").value);
+  let iva = Number(document.querySelector("#iva").value);
+  let descuentoTexto = Number(document.querySelector("#descuento").value);
+
+  let error = document.querySelector("#error1");
+  let salida = document.querySelector("#salida1");
+
+  if (document.querySelector("#base").value === "" || base < 0){
+    error.classList.remove("d-none");
+    return;
+  }
+
+  let precioFinal;
+  let descuento;
+
+  if (descuentoTexto === ""){
+    descuento = 0;
+    precioFinal =calcularPrecio(base, iva);
+  }else {
+    descuento = Number(descuentoTexto);
+
+    if (descuento < 0 || descuento > 100){
+      error.classList.remove("d-none");
+      return;
+    }
+    precioFinal = calcularPrecio(base, iva, descuento);
+  }
+
+  error.classList.add("d-none");
+
+  let precioSinIva = base - (base * descuento / 100);
+
+  pintarLista("salida1", [
+    "Precio sin iva: " + formatearEuros(precioSinIva),
+    "Descuento: " + descuento + " %",
+    "IVA: " + iva + " %",
+    "Precio final: " + formatearEuros(precioFinal)
+  ]);
 }
 
 
