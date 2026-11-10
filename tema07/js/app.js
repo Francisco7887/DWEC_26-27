@@ -58,45 +58,51 @@ function mostrarPrecio() {
   // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
   //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
 
-  let base = Number(Document.querySelector("#base").value);
+  let baseTexto = document.querySelector("#base").value;
+  let base = Number(baseTexto);
   let iva = Number(document.querySelector("#iva").value);
-  let descuentoTexto = Number(document.querySelector("#descuento").value);
+  let descuentoTexto = document.querySelector("#descuento").value;
 
   let error = document.querySelector("#error1");
-  let salida = document.querySelector("#salida1");
 
-  if (document.querySelector("#base").value === "" || base < 0){
+  if (baseTexto === "" || base < 0) {
+    error.textContent = "Introduce una base válida.";
     error.classList.remove("d-none");
     return;
   }
 
-  let precioFinal;
   let descuento;
+  let precioFinal;
 
-  if (descuentoTexto === ""){
+  if (descuentoTexto === "") {
     descuento = 0;
-    precioFinal =calcularPrecio(base, iva);
-  }else {
+    precioFinal = calcularPrecio(base, iva);
+  } else {
     descuento = Number(descuentoTexto);
 
-    if (descuento < 0 || descuento > 100){
+    if (descuento < 0 || descuento > 100) {
+      error.textContent = "El descuento debe estar entre 0 y 100.";
       error.classList.remove("d-none");
       return;
     }
+
     precioFinal = calcularPrecio(base, iva, descuento);
   }
 
   error.classList.add("d-none");
 
-  let precioSinIva = base - (base * descuento / 100);
+  let precioSinIVA = base - (base * descuento / 100);
 
-  pintarLista("salida1", [
-    "Precio sin iva: " + formatearEuros(precioSinIva),
+  pintarLista("#salida1", [
+    "Precio sin IVA: " + formatearEuros(precioSinIVA),
     "Descuento: " + descuento + " %",
     "IVA: " + iva + " %",
     "Precio final: " + formatearEuros(precioFinal)
   ]);
+
+  console.log("Ejercicio 1:", precioFinal);
 }
+
 
 
 // ============================================================
