@@ -39,7 +39,15 @@ const estudiante = {
 
   presentarse: function () {
     return "Soy " + this.nombre + " " + this.apellidos + ", tengo " + this.edad + " años y estudio " + this.curso + ".";
+  },
+
+  esMayorDeEdad: function () {
+  if (this.edad >= 18){
+    return "Sí";
+  } else {
+    return "No";
   }
+}
 
 };
 
@@ -62,7 +70,10 @@ function verFicha() {
   const presentacion = document.createElement("p");
   presentacion.textContent = estudiante.presentarse();
 
-  salida.append(lista, presentacion);
+  const mayorEdad = document.createElement("p");
+  mayorEdad.textContent = "Es mayor de edad: " + estudiante.esMayorDeEdad();
+
+  salida.append(lista, presentacion, mayorEdad);
   console.log("Ejercicio 1:", estudiante);
 }
 
@@ -206,16 +217,16 @@ function ordenarPorPrecio() {
 }
 
 function filtrarCaros() {
-  // TODO: con filter(), los productos de más de 50 €. Píntalos y escribe en #mensaje3 cuántos son.
-  const productosCaros = productos.filter(function (producto) {
-    return producto.precio > 50;
+  const productosFiltrados = productos.filter(function (producto) {
+    return producto.categoria === "Periféricos";
   });
 
-  pintarProductos(productosCaros);
+  pintarProductos(productosFiltrados);
 
   const mensaje = document.querySelector("#mensaje3");
-  mensaje.textContent = "Hay " + productosCaros.length + " productos de más de 50 €.";
-  console.log("Ejercicio 3: filtrados por precio > 50 €:", productosCaros);
+  mensaje.textContent = "Hay " + productosFiltrados.length + " productos de la categoría Periféricos.";
+
+  console.log("Productos filtrados:", productosFiltrados);
 }
 
 function buscarProducto() {
@@ -275,6 +286,13 @@ const alumno = {
     }, 0);
 
     return suma / this.notas.length;
+  },
+
+  notaMalAlta: function () {
+    if (this.notas.length === 0){
+      return null;
+    }
+    return Math.max (...this.notas);
   }
 };
 
