@@ -1,6 +1,6 @@
 # Tarea 7 · Funciones, flechas y clases
 
-**Autor:** fRANCISCO fERNÁNDEZ oRTEGA · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** FRANCISCO FERNÁNDEZ ORTEGA · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
 > **Plantilla de la tarea 7.** Cómo usarla:
 >
