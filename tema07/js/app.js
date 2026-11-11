@@ -51,12 +51,6 @@ function formatearEuros(cantidad) {
 }
 
 function mostrarPrecio() {
-  // TODO: lee #base, #iva y #descuento (value). El IVA conviértelo con Number().
-  // TODO: si la base está vacía o es negativa, error en #error1 (quítale "d-none") y no sigas.
-  // TODO: si el descuento está vacío, llama a calcularPrecio(base, iva), sin el tercer argumento, para que se
-  //       use el valor por defecto. Si no, comprueba que está entre 0 y 100 y pásaselo.
-  // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
-  //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
 
   let baseTexto = document.querySelector("#base").value;
   let base = Number(baseTexto);
@@ -164,9 +158,22 @@ function verDuracionTotal() {
 }
 
 function buscarAntigua() {
-  // TODO: el callback nuevo, ya con flecha: con find(), la primera película anterior a 1990.
-  // TODO: find devuelve undefined si no hay ninguna: dilo en #mensaje2 y vacía la lista.
-  //       Si la encuentra, píntala con pintarLista("#salida2", [comoTexto(antigua)]).
+  const antigua = peliculas.find((pelicula) => pelicula.anio < 1990);
+
+  const mensaje = document.querySelector("#mensaje2");
+
+  if (antigua === undefined) {
+    mensaje.textContent = "No se ha encontrado ninguna película anterior a 1990.";
+
+    pintarLista("#salida2", []);
+
+  } else {
+    mensaje.textContent = "Primera película anterior a 1990:";
+
+    pintarLista("#salida2", [comoTexto(antigua)]);
+  }
+
+  console.log("Ejercicio 2: find →", antigua);
 }
 
 
@@ -177,11 +184,14 @@ function buscarAntigua() {
 const numeros = [3, -1, 4, -1, 5, 9];
 document.querySelector("#numeros3").textContent = `const numeros = [${numeros.join(", ")}];`;
 
-// TODO: transformar(lista, operacion) hace a mano lo que hace map, sin usar map:
-//       recorre lista con for…of, llama a operacion con cada elemento, guarda lo que devuelve
-//       en un array nuevo y, al final, devuelve ese array.
 function transformar(lista, operacion) {
+  const resultado = [];
 
+  for (const elemento of lista) {
+    resultado.push(operacion(elemento));
+  }
+
+  return resultado;
 }
 
 // Ya está hecha: escribe en #salida3 tu resultado, el de map y numeros
@@ -209,12 +219,19 @@ function verDobles() {
 }
 
 function verCuadrados() {
-  // TODO: como verDobles(), con el cuadrado de cada número (n ** 2).
+  const resultado = transformar(numeros, (n) => n ** 2);
+
+  mostrar3("cuadrados", resultado, numeros.map((n) => n ** 2));
+
+  console.log("Ejercicio 3: cuadrados →", resultado);
 }
 
 function verAbsolutos() {
-  // TODO: como verDobles(), con el valor absoluto (Math.abs). Pista: Math.abs ya es una función,
-  //       así que se puede pasar tal cual, sin paréntesis.
+  const resultado = transformar(numeros, Math.abs);
+
+  mostrar3("absolutos", resultado, numeros.map(Math.abs));
+
+  console.log("Ejercicio 3: absolutos →", resultado);
 }
 
 
