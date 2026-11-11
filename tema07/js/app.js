@@ -239,7 +239,7 @@ function verAbsolutos() {
 // Ejercicio 4 · Dos contadores con closure
 // ============================================================
 
-function crearContador(paso) {
+function crearContador(paso = 1) {
   let cuenta = 0;
 
   return function () {
@@ -485,16 +485,36 @@ function mostrarDias() {
 //       Encadena trim, split(" "), filter (para quitar las palabras vacías si hay espacios dobles),
 //       map (la primera letra de cada palabra, en mayúscula) y join("").
 function iniciales(nombreCompleto) {
-
+  return nombreCompleto.trim().split(" ").filter((palabra) => palabra !== "").map((palabra) => palabra[0].toUpperCase()).join("");
 }
 
 // TODO: crearUsuario(nombreCompleto) devuelve las iniciales en minúsculas y tres cifras al azar, de 000 a 999:
 //       «lmo042». Pista: Math.random, Math.floor y padStart(3, "0").
 function crearUsuario(nombreCompleto) {
+  const inicialesMinusculas = iniciales(nombreCompleto).toLowerCase();
 
+  const cifras = Math.floor(Math.random() * 1000)
+    .toString()
+    .padStart(3, "0");
+
+  return inicialesMinusculas + cifras;
 }
 
 function mostrarIniciales() {
   // TODO: lee #nombre6. Si está vacío, avisa en #salida6b.
   // TODO: si no, escribe en #salida6b «Iniciales: LMO · usuario: lmo042».
+  const nombre = document.querySelector("#nombre6").value.trim();
+
+  const salida = document.querySelector("#salida6b");
+
+  if (nombre === "") {
+    salida.textContent = "Introduce un nombre completo.";
+
+    return;
+  }
+
+  salida.textContent =
+    `Iniciales: ${iniciales(nombre)} · usuario: ${crearUsuario(nombre)}`;
+
+  console.log("Ejercicio 6: iniciales →", iniciales(nombre));
 }
