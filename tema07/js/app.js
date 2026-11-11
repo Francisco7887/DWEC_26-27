@@ -373,11 +373,56 @@ function pintarAlumnos() {
 }
 
 function crearAlumno() {
-  // TODO: lee #nombre5, #curso5, #empresa5 y #notas5 (value y trim). Si el nombre está vacío, error en #error5.
-  // TODO: si la empresa está vacía, crea un Alumno con new; si no, un AlumnoFCT.
-  // TODO: si hay notas, sepáralas con split(",") y conviértelas con map((texto) => Number(texto.trim())).
-  //       Si alguna no es válida (some), error en #error5 y no sigas. Si todas lo son, añádelas con anadirNota().
-  // TODO: añade el alumno a alumnos, oculta el error, vacía las casillas y llama a pintarAlumnos().
+  const nombre = document.querySelector("#nombre5").value.trim();
+  const curso = document.querySelector("#curso5").value.trim();
+  const empresa = document.querySelector("#empresa5").value.trim();
+  const notasTexto = document.querySelector("#notas5").value.trim();
+
+  const error = document.querySelector("#error5");
+
+  if (nombre === "") {
+    error.textContent = "Introduce el nombre del alumno.";
+
+    error.classList.remove("d-none");
+
+    return;
+  }
+
+  let alumno;
+
+  if (empresa === "") {
+    alumno = new Alumno(nombre, curso);
+  } else {
+    alumno = new AlumnoFCT(nombre, curso, empresa);
+  }
+
+  if (notasTexto !== "") {
+    const notas = notasTexto
+      .split(",")
+      .map((texto) => Number(texto.trim()));
+
+    if (notas.some((nota) => Number.isNaN(nota) || nota < 0 || nota > 10)) {
+      error.textContent = "Todas las notas deben ser números entre 0 y 10.";
+
+      error.classList.remove("d-none");
+
+      return;
+    }
+
+    notas.forEach((nota) => alumno.anadirNota(nota));
+  }
+
+  alumnos.push(alumno);
+
+  error.classList.add("d-none");
+
+  document.querySelector("#nombre5").value = "";
+  document.querySelector("#empresa5").value = "";
+  document.querySelector("#notas5").value = "";
+
+  pintarAlumnos();
+
+  console.log("Ejercicio 5: alumno creado →", alumno);
 }
 
 pintarAlumnos();
